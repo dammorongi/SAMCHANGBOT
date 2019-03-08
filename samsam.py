@@ -1,4 +1,6 @@
 import discord
+import os
+
 
 client = discord.Client()
 
@@ -26,4 +28,7 @@ async def on_message(message):
         await client.send_message(message.channel, "와이자 세팀!!")
     if message.content.startswith("!파밍"):
         await client.send_message(message.channel, "드링크 하나만 주세요")
-client.run('NTUzNjUyMTU1ODY1ODkwODYx.D2RMiw.8oVX4ky3QzFPeKLQANE058uYGVE')
+        
+        
+access_token = os.environ["BOT_TOKEN"]        
+client.run(access_token)
